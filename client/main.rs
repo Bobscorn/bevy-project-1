@@ -1,14 +1,18 @@
-mod utils;
-mod components;
-mod systems;
-mod constants;
-mod events;
-mod plugin;
 mod start;
+mod utils;
+mod plugin;
+mod events;
+mod constants;
+mod components;
 mod macros;
-mod input;
 mod resources;
-mod game_state;
+mod implementations;
+mod systems;
+mod enums;
+mod input;
+mod world;
+mod structs;
+mod parts;
 
 use wasm_bindgen::prelude::*;
 use start::start;

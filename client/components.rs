@@ -1,4 +1,24 @@
 use bevy::prelude::*;
+use crate::constants::*;
+use crate::enums::*;
+use crate::resources::*;
+use crate::structs::*;
+
+#[derive(Component)]
+pub struct SymbolButton {}
+
+#[derive(Component)]
+pub struct HoverText {}
+
+#[derive(Component)]
+pub struct MyButton {
+    pub identifier: ButtonType
+}
+
+#[derive(Component)]
+pub struct SubBuilderButton {
+    pub part: SubPart,
+}
 
 #[derive(Component, Reflect, Default)]
 pub struct Velocity {
@@ -105,7 +125,7 @@ pub struct HangarDoor {
 }
 
 #[derive(Component)]
-pub struct Thruster {
+pub struct Propeller {
 
 }
 
@@ -114,9 +134,16 @@ pub struct FighterDrone {
 
 }
 
-#[derive(Component, Default)]
-pub struct Mothership {
+#[derive(Component)]
+pub struct SubsRoot {
+    pub parts: Vec<char>,
     pub num_entities: u32
+}
+
+impl Default for SubsRoot {
+    fn default() -> Self {
+        SubsRoot { parts: Vec::new(), num_entities: 0 }
+    }
 }
 
 #[derive(Component)]
@@ -128,3 +155,12 @@ pub struct Player {
 pub struct Lifetime {
     pub lifetime: f32 // Remaining Lifetime in seconds
 }
+
+#[derive(Component)]
+pub struct MainCamera;
+
+#[derive(Component)]
+pub struct MySubmarineTag;
+
+#[derive(Component)]
+pub struct UnerasablePiece;

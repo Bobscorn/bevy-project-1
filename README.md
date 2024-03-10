@@ -1,6 +1,6 @@
-# Textship #
+# Text Sub #
 
-Build a spaceship out of ASCII Symbols and fight in a 2 Player deathmatch.
+Build a submarine out of ASCII Symbols and fight in a multiplayer deathmatch.
 
 ## Setup Bevy to run in the browser ##
 
@@ -49,17 +49,17 @@ Build a spaceship out of ASCII Symbols and fight in a 2 Player deathmatch.
 
 ## Client: Run a development build ##
 
+- Run the signalling server locally:
+    ```
+    matchbox_server
+    ```
+
 - Start the wasm-server-runner:
     ```
     cargo run --target wasm32-unknown-unknown
     ```
 
 - Open a browser tab at 127.0.0.1:1334 (or whatever the port is).
-
-- Run the signalling server locally:
-    ```
-    matchbox_server
-    ```
 
 Multiple tabs can connect to the wasm-server-runner, which means you can run multiple clients on the same machine.
 
@@ -77,13 +77,17 @@ wasm-pack build --release --target bundler --out-dir target/bundle
 
 ## FAQ ##
 
-### My ships don't move when I open two tabs! ###
+### My subs don't move when I open two tabs! ###
 
-This is a known bug with the ship detection algorithm. It will work with multi windows and real 2 player scenarios.
+This is a known bug with the sub detection algorithm. It will work with multi windows and real 2 player scenarios.
 
 ## Libraries ##
 
 - rust syntax refresher: https://learnxinyminutes.com/docs/rust/
+
+- rust book: https://doc.rust-lang.org/stable/book/
+
+- rust api: https://doc.rust-lang.org/std/
 
 - bevy api: https://docs.rs/bevy/latest/bevy/
 
@@ -103,6 +107,12 @@ This is a known bug with the ship detection algorithm. It will work with multi w
 
 - rocket api: https://api.rocket.rs/v0.5-rc/rocket/
 
-- matchbox: https://github.com/johanhelsing/matchbox/
+- bevy_ggrs api: https://docs.rs/bevy_ggrs/0.12.0/bevy_ggrs/
+
+- bevy_matchbox api: https://docs.rs/bevy_matchbox/0.7.0/bevy_matchbox/index.html
 
 - wasm server runner: https://github.com/jakobhellermann/wasm-server-runner
+
+- bevy_ui api: https://docs.rs/bevy_ui/latest/bevy_ui/
+
+- bevy_pkg: https://docs.rs/bevy_pkv/0.8.0/bevy_pkv/

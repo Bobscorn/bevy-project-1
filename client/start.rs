@@ -1,15 +1,18 @@
 use bevy::prelude::*;
-use bevy_ggrs::GGRSPlugin;
+use bevy_ggrs::*;
+use bevy_pkv::*;
+use bevy_inspector_egui::quick::*;
 
 use crate::components::*;
 use crate::plugin::GamePlugin;
-use crate::input::player_input;
-use crate::systems::GgrsConfig;
+use crate::input::*;
+use crate::implementations::*;
+use crate::constants::*;
 
 pub fn start() {
     let mut app = App::new();
 
-    GGRSPlugin::<GgrsConfig>::new()
+    GgrsPlugin::<GgrsConfig>::new()
         .with_input_system(player_input)
         .register_rollback_component::<Transform>()
         .register_rollback_component::<BulletReady>()
@@ -27,5 +30,7 @@ pub fn start() {
             ..default()
         }))
         .add_plugin(GamePlugin)
+        .add_plugin(WorldInspectorPlugin::new())
+        .insert_resource(PkvStore::new(TEAM_KEY, GAME_NAME))
         .run();
 }
