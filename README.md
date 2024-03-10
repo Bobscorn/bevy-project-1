@@ -109,7 +109,7 @@ This is a known bug with the sub detection algorithm. It will work with multi wi
 
 - bevy_ggrs api: https://docs.rs/bevy_ggrs/0.12.0/bevy_ggrs/
 
-- bevy_matchbox api: https://docs.rs/bevy_matchbox/0.6.0/bevy_matchbox/
+- bevy_matchbox api: https://docs.rs/bevy_matchbox/0.7.0/bevy_matchbox/index.html
 
 - wasm server runner: https://github.com/jakobhellermann/wasm-server-runner
 
